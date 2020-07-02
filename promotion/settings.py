@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product',
     'pages',
-    'psycopg2'
+    'psycopg2',
     'decouple',
     'dj_database_url',
 
