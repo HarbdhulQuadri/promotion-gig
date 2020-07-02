@@ -12,11 +12,15 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url       # Place this line preferably at the top
 from decouple import config  # Place this line preferably at the top
+import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# load environment variables from .env
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -86,11 +90,8 @@ WSGI_APPLICATION = 'promotion.wsgi.application'
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-DATABASES = {
-      'default': dj_database_url.config(
-          default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-      )
-  }  
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)  
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
