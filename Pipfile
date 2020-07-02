@@ -12,6 +12,7 @@ dj-database-url = "*"
 pillow = "*"
 gunicorn = "*"
 django = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
