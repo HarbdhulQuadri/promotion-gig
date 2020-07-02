@@ -25,9 +25,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '9@%9j6y=5vew@7z$$y12p^a^-p+)y3hvf!t&tdzqq4%)dqbu^*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,7 +85,6 @@ WSGI_APPLICATION = 'promotion.wsgi.application'
 
 
 DEBUG = config('DEBUG', default=False, cast=bool)
-import dj_database_url
 
 DATABASES = {
       'default': dj_database_url.config(
