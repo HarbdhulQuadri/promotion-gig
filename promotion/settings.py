@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
 import os
 import dj_database_url       # Place this line preferably at the top
 from decouple import config  # Place this line preferably at the top
@@ -86,11 +85,12 @@ WSGI_APPLICATION = 'promotion.wsgi.application'
 
 
 DEBUG = config('DEBUG', default=False, cast=bool)
+ import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+        default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
+      )
+  }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
