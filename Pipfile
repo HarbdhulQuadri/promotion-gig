@@ -10,7 +10,7 @@ python-decouple = "*"
 whitenoise = "*"
 dj-database-url = "*"
 pillow = "*"
-gunicorn = "*"
+gunicorn = "==19.9.0"
 django = "*"
 psycopg2 = "*"
 
