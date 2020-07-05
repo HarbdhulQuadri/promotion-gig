@@ -88,7 +88,6 @@
 											even more so when you are looking 
 											to grow your brand and audience.
 											 Promoting your music will get you the audience you deserve</p>
-									<a class="mu-primary-btn" href="#">Read more <span class="fa fa-long-arrow-right"></span></a>
 								</div>
 							</div>
 						</div>
@@ -161,6 +160,8 @@
 													<div class="mu-single-service-content">
 														<h3><a a href="{% url 'pricing' pk=product.pk %}">{{ product.product_name }}</a></h3>
 														<p>{{ product.description }}</p>
+														<a class="mu-primary-btn" href="{% url 'pricing' pk=product.pk %}"> Order Now<span class="fa fa-long-arrow-right"></span></a>
+
 													</div>
 												</div>
 											</div>
