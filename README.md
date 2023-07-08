@@ -25,7 +25,7 @@ If you would like to contribute to this repository, you can:
 
 ## Contact
 
-If you have any questions about this repository, please contact the author at [email address].
+If you have any questions about this repository, please contact the author at [automatequadri@gmail.com].
 
 ## Thanks!
 
